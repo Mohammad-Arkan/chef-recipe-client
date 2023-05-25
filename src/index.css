@@ -2,3 +2,8 @@ body {
   max-width: 1280px;
   margin: 0 auto;
 }
+
+.popular-foods img {
+  width: 250px;
+  border-radius: 0.7rem;
+}
