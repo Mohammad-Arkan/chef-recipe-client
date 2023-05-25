@@ -20,11 +20,11 @@ const NavigationBar = () => {
                 Blog
               </Link> */}
             </Nav>
-            <button className="btn btn-primary fw-semibold fs-6">
-              <Link className="text-decoration-none text-white" to="/login">
+            <Link className="text-decoration-none" to="/login">
+              <button className="btn btn-outline-primary fw-semibold fs-6">
                 Login
-              </Link>
-            </button>
+              </button>
+            </Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>
