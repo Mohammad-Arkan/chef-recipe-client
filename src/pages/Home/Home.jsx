@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "../shared/Header";
+import Header from "../../Header/Header";
 import {useLoaderData} from "react-router-dom";
 import Chefs from "../../Chefs/Chefs";
 import PopularFoods from "../../PopuparFoods/PopularFoods";
+import Tips from "../../Tips/Tips";
 
 const Home = () => {
   const chefs = useLoaderData();
-  console.log(chefs);
   return (
     <div>
       <Header />
@@ -19,6 +19,7 @@ const Home = () => {
         ))}
       </div>
       <PopularFoods />
+      <Tips />
     </div>
   );
 };

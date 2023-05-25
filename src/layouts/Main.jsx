@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../pages/shared/Header";
+import Header from "../Header/Header";
 import {Outlet} from "react-router-dom";
 import Footer from "../pages/shared/Footer";
 import NavigationBar from "../pages/Shared/NavigationBar";
