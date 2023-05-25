@@ -9,7 +9,7 @@ const NavigationBar = () => {
     <div>
       <Navbar bg="light" expand="lg">
         <Container className="fs-5">
-          <span class="navbar-brand mb-0 fs-4 h1">Savory Secrets</span>
+          <span className="navbar-brand mb-0 fs-4 h1">Savory Secrets</span>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto gap-3">

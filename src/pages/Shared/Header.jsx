@@ -1,7 +1,5 @@
 import React from "react";
-import img1 from "/assets/img1.png";
-import chef3d from "/assets/3d-chef.png";
-import img2 from "/assets/img2.png";
+import banner from "/assets/banner.png";
 
 const Header = () => {
   return (
@@ -18,7 +16,7 @@ const Header = () => {
         <button className="btn btn-primary">Order Now</button>
       </div>
       <div className="d-flex justify-content-center">
-        <img className="w-75" src={img2} />
+        <img className="w-75" src={banner} />
       </div>
     </div>
   );
