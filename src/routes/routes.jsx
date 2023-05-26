@@ -1,14 +1,16 @@
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 import Main from "../layouts/Main";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Chef from "../Chef/Chef";
+import ErrorPage from "../ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
