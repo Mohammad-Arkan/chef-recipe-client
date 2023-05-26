@@ -12,9 +12,9 @@ const Home = () => {
       <Header />
       <div className="row mx-5 mt-5 pt-4 pt-md-0 mt-md-0">
         <h2 className="text-center">Our Available Chefs</h2>
-        {chefs.map((chef, idx) => (
-          <div className="col-lg-4 col-md-6 col-12 my-4">
-            <Chefs key={idx} chef={chef} />
+        {chefs.map((chef) => (
+          <div key={chef.id} className="col-lg-4 col-md-6 col-12 my-4">
+            <Chefs chef={chef} />
           </div>
         ))}
       </div>
