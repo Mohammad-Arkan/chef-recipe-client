@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import {Link} from "react-router-dom";
+import {AuthContext} from "../../providers/AuthProvider";
 
 const NavigationBar = () => {
+  const {user, logOut} = useContext(AuthContext);
+
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -13,18 +16,46 @@ const NavigationBar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto gap-3">
-              {/* <Link className="text-decoration-none" to="/">
+              <Link className="text-decoration-none" to="/">
                 Home
               </Link>
               <Link className="text-decoration-none" to="/blog">
                 Blog
-              </Link> */}
+              </Link>
+              {user ? (
+                user.email
+              ) : (
+                <Link className="text-decoration-none" to="/blog">
+                  Register
+                </Link>
+              )}
             </Nav>
-            <Link className="text-decoration-none" to="/login">
-              <button className="btn btn-outline-primary fw-semibold fs-6">
-                Login
-              </button>
-            </Link>
+            {user ? (
+              <div>
+                <span className="me-3">
+                  {user.photoURL ? (
+                    <img src={user.photoURL} />
+                  ) : (
+                    <i
+                      className="fa-solid fa-user bg-secondary p-2 rounded-circle"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title={user.displayName}></i>
+                  )}
+                </span>
+                <button
+                  onClick={logOut}
+                  className="btn btn-outline-primary fw-semibold fs-6">
+                  LogOut
+                </button>
+              </div>
+            ) : (
+              <Link className="text-decoration-none" to="/login">
+                <button className="btn btn-outline-primary fw-semibold fs-6">
+                  Login
+                </button>
+              </Link>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>

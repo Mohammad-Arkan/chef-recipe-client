@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import {Container} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -6,8 +6,12 @@ import {Link} from "react-router-dom";
 import {AuthContext} from "../../providers/AuthProvider";
 
 const Login = () => {
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const {signIn} = useContext(AuthContext);
   const handleLogin = (event) => {
+    setError("");
+    setSuccess("");
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -15,10 +19,10 @@ const Login = () => {
 
     signIn(email, password)
       .then(() => {
-        console.log("Account Has Logged In Successfully");
+        setSuccess("Account Logged In Successfully");
       })
       .catch((err) => {
-        console.log(err.message);
+        setError(err.message);
       });
   };
 
@@ -60,9 +64,10 @@ const Login = () => {
       </Button>
       <Button className="my-2 ms-2" variant="outline-primary" type="submit">
         <i className="fa-brands fa-github"></i> Sign-in with Github
-      </Button>
-      <Form.Text className="text-danger"></Form.Text>
-      <Form.Text className="text-success"></Form.Text>
+      </Button>{" "}
+      <br />
+      <Form.Text className="text-danger">{error}</Form.Text>
+      <Form.Text className="text-success">{success}</Form.Text>
     </Container>
   );
 };
