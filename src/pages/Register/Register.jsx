@@ -10,7 +10,7 @@ const Register = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const {createUser, updateUserData, logOut} = useContext(AuthContext);
+  const {createUser, updateUserData} = useContext(AuthContext);
 
   const handleRegister = (event) => {
     setError("");
@@ -25,6 +25,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+        console.log(user);
         updateUserData(user, name, photoURL);
         navigate("/login");
         setSuccess("Account Has Created Successfully");

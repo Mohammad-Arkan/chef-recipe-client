@@ -9,7 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const {signIn} = useContext(AuthContext);
+  const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext);
   const location = useLocation();
   const redirect = location?.state?.from?.pathname || "/";
 
@@ -64,10 +64,18 @@ const Login = () => {
           Login
         </Button>
       </Form>
-      <Button className="my-2" variant="outline-primary" type="submit">
+      <Button
+        onClick={googleSignIn}
+        className="my-2"
+        variant="outline-primary"
+        type="submit">
         <i className="fa-brands fa-google"></i> Sign-in with Google
       </Button>
-      <Button className="my-2 ms-2" variant="outline-primary" type="submit">
+      <Button
+        onClick={githubSignIn}
+        className="my-2 ms-2"
+        variant="outline-primary"
+        type="submit">
         <i className="fa-brands fa-github"></i> Sign-in with Github
       </Button>{" "}
       <br />
