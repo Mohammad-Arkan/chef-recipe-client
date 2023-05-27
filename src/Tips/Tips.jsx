@@ -4,9 +4,9 @@ const Tips = () => {
   return (
     <>
       <h3 className="text-center">Prevent Failure (Tips)</h3>
-      <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
+      <div className="d-flex flex-column flex-md-row justify-content-center align-items-center ">
         <img width={400} src="assets/chef.png" />
-        <div className="p-4 border rounded">
+        <div className="p-4 border rounded shadow-sm">
           <h5>
             To help prevent failure, here are our top five tips for successfully
             preparing a recipe:

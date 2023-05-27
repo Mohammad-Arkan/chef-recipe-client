@@ -1,8 +1,5 @@
 import React from "react";
 import {useLoaderData} from "react-router-dom";
-import {Card} from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import {Link} from "react-router-dom";
 
 const Chef = () => {
   const chef = useLoaderData();
@@ -33,7 +30,7 @@ const Chef = () => {
       </div>
       <div>
         <h3 className="text-center pt-3">Available Recipes</h3>
-        <div className="row justify-content-center gap-5 my-5">
+        <div className="row justify-content-center gap-5 my-5 pb-5">
           {recipes.map((recipe, idx) => (
             <div className="col-3 p-4 shadow-sm rounded border" key={idx}>
               <h5>Recipe: {recipe.recipe_name}</h5>

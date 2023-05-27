@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, Col, Container, Row} from "react-bootstrap";
+import {Card, Container, Row} from "react-bootstrap";
 
 const PopularFoods = () => {
   return (
@@ -7,7 +7,7 @@ const PopularFoods = () => {
       <h2>Turkish Popular Foods</h2>
       <Container>
         <Row className="gap-4 my-5 justify-content-center">
-          <Card style={{width: "18rem"}}>
+          <Card className="shadow-sm" style={{width: "18rem"}}>
             <Card.Img
               variant="top"
               className="py-3"
@@ -22,7 +22,7 @@ const PopularFoods = () => {
             </Card.Body>
           </Card>
 
-          <Card style={{width: "18rem"}}>
+          <Card className="shadow-sm" style={{width: "18rem"}}>
             <Card.Img
               variant="top"
               className="py-3"
@@ -36,7 +36,7 @@ const PopularFoods = () => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card style={{width: "18rem"}}>
+          <Card className="shadow-sm" style={{width: "18rem"}}>
             <Card.Img
               variant="top"
               className="py-3"
@@ -50,7 +50,7 @@ const PopularFoods = () => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card style={{width: "18rem"}}>
+          <Card className="shadow-sm" style={{width: "18rem"}}>
             <Card.Img variant="top" className="py-3" src="/assets/meze.jpg" />
             <Card.Body>
               <Card.Title> Mezee</Card.Title>

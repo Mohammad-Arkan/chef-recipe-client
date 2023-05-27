@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <div className="container my-5 border shadow rounded py-5 ">
+      <div className="container my-5 border shadow rounded py-5">
         <div className="footer-links mb-4 d-flex justify-content-center gap-4 fw-semibold">
           <Link to="/">Home</Link>
           <Link to="/blog">Blog</Link>
@@ -22,10 +22,10 @@ const Footer = () => {
           <button className="btn btn-outline-primary ">Subscribe</button>
         </div>
         <div className="fs-2 my-4 d-flex justify-content-center gap-3">
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-github"></i>
-          <i class="fa-brands fa-youtube"></i>
-          <i class="fa-brands fa-twitter"></i>
+          <i className="fa-brands fa-facebook"></i>
+          <i className="fa-brands fa-github"></i>
+          <i className="fa-brands fa-youtube"></i>
+          <i className="fa-brands fa-twitter"></i>
         </div>
         <h5 className="text-center">&copy; Copyright 2023 Savory Secrets</h5>
       </div>

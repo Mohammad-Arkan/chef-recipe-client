@@ -1,11 +1,10 @@
 import {createBrowserRouter} from "react-router-dom";
 import Main from "../layouts/Main";
 import Home from "../pages/Home/Home";
-import Login from "../pages/Login/Login";
-import Register from "../pages/Register/Register";
 import Chef from "../Chef/Chef";
 import ErrorPage from "../ErrorPage";
-
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,12 +14,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/chefs"),
+        loader: () =>
+          fetch("https://chef-recipe-server-zynscript.vercel.app/chefs"),
       },
       {
         path: "/chef/:id",
         element: <Chef />,
-        loader: ({params}) => fetch(`http://localhost:5000/chef/${params.id}}`),
+        loader: ({params}) =>
+          fetch(
+            `https://chef-recipe-server-zynscript.vercel.app/chef/${params.id}}`
+          ),
       },
       {
         path: "/login",

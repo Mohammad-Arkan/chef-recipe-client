@@ -6,7 +6,7 @@ const ErrorPage = () => {
       <img className="w-50" src="assets/err.jpg" />
       <h2>
         {" "}
-        <i class="fa-solid fa-triangle-exclamation"></i> PAGE NOT FOUND
+        <i className="fa-solid fa-triangle-exclamation"></i> PAGE NOT FOUND
       </h2>
     </div>
   );
