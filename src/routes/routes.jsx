@@ -5,6 +5,7 @@ import Chef from "../Chef/Chef";
 import ErrorPage from "../ErrorPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/chef/:id",
-        element: <Chef />,
+        element: (
+          <PrivateRoute>
+            <Chef />
+          </PrivateRoute>
+        ),
         loader: ({params}) =>
           fetch(
             `https://chef-recipe-server-zynscript.vercel.app/chef/${params.id}}`

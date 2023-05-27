@@ -7,7 +7,6 @@ import {AuthContext} from "../../providers/AuthProvider";
 
 const NavigationBar = () => {
   const {user, logOut} = useContext(AuthContext);
-
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -25,7 +24,7 @@ const NavigationBar = () => {
               {user ? (
                 user.email
               ) : (
-                <Link className="text-decoration-none" to="/blog">
+                <Link className="text-decoration-none" to="/register">
                   Register
                 </Link>
               )}
@@ -34,7 +33,15 @@ const NavigationBar = () => {
               <div>
                 <span className="me-3">
                   {user.photoURL ? (
-                    <img src={user.photoURL} />
+                    <img
+                      width={44}
+                      height={44}
+                      className="rounded-circle"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title={user.displayName}
+                      src={user.photoURL}
+                    />
                   ) : (
                     <i
                       className="fa-solid fa-user bg-secondary p-2 rounded-circle"

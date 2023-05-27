@@ -2,13 +2,17 @@ import React, {useContext, useState} from "react";
 import {Container} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import {Link} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import {AuthContext} from "../../providers/AuthProvider";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const {signIn} = useContext(AuthContext);
+  const location = useLocation();
+  const redirect = location?.state?.from?.pathname || "/";
+
   const handleLogin = (event) => {
     setError("");
     setSuccess("");
@@ -20,6 +24,7 @@ const Login = () => {
     signIn(email, password)
       .then(() => {
         setSuccess("Account Logged In Successfully");
+        navigate(redirect, {replace: true});
       })
       .catch((err) => {
         setError(err.message);
