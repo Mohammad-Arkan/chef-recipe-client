@@ -25,7 +25,6 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
         updateUserData(user, name, photoURL);
         navigate("/login");
         setSuccess("Account Has Created Successfully");

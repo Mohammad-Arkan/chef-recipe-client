@@ -13,3 +13,24 @@ body {
   color: black;
   font-size: 1.3rem;
 }
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: coral;
+}
+
+.active {
+  color: white;
+  font-weight: 600;
+  background-color: black;
+  border-radius: 3px;
+  padding: 0 0.5rem;
+  transition: 500ms ease-in-out;
+}
+
+.active:hover {
+  color: wheat;
+}

@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {AuthContext} from "../../providers/AuthProvider";
 
 const NavigationBar = () => {
@@ -15,18 +15,18 @@ const NavigationBar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto gap-3">
-              <Link className="text-decoration-none" to="/">
+              <NavLink className="text-decoration-none" to="/">
                 Home
-              </Link>
-              <Link className="text-decoration-none" to="/blog">
+              </NavLink>
+              <NavLink className="text-decoration-none" to="/blog">
                 Blog
-              </Link>
+              </NavLink>
               {user ? (
                 user.email
               ) : (
-                <Link className="text-decoration-none" to="/register">
+                <NavLink className="text-decoration-none" to="/register">
                   Register
-                </Link>
+                </NavLink>
               )}
             </Nav>
             {user ? (

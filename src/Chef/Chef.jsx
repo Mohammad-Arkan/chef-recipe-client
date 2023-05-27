@@ -1,9 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import {useLoaderData} from "react-router-dom";
+import {ToastContainer, toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Chef = () => {
   const chef = useLoaderData();
-  console.log(chef);
+  const [disabled, setDisabled] = useState(false);
+  const handleDisabled = () => {
+    event.target.setAttribute("disabled", "");
+    toast.success("The Recipe Is Your Favorite!", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    setDisabled(!disabled);
+  };
+
   const {
     chef_name,
     chef_picture,
@@ -36,8 +53,8 @@ const Chef = () => {
               <h5>Recipe: {recipe.recipe_name}</h5>
               <p>
                 <span className="fw-semibold">Ingredients:</span>
-                {recipe.ingredients.map((ingredient) => (
-                  <li>{ingredient}</li>
+                {recipe.ingredients.map((ingredient, idx) => (
+                  <li key={idx}>{ingredient}</li>
                 ))}
               </p>
               <p>
@@ -47,9 +64,23 @@ const Chef = () => {
               <p>
                 Rating: <span className="fw-semibold">{recipe.rating}</span>
               </p>
-              <button className="btn btn-outline-primary">
+              <button
+                onClick={handleDisabled}
+                className="btn btn-outline-primary">
                 Add To Favorite
               </button>
+              <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+              />
             </div>
           ))}
         </div>
