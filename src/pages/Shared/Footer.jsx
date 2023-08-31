@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <div className="container my-5 border shadow rounded py-5">
-        <div className="footer-links mb-4 d-flex flex-column flex-lg-row justify-content-center text-center gap-4 fw-semibold">
+      <div id="footer" className=" mt-5 border shadow rounded py-5">
+        <div className="footer footer-links mb-4 d-flex flex-column flex-lg-row justify-content-center text-center gap-4 fw-semibold">
           <Link to="/">Home</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/login">Login</Link>

@@ -32,13 +32,15 @@ const Chef = () => {
 
   return (
     <>
-      <div className="d-lg-flex w-75 mx-auto align-items-center gap-3 my-5 border rounded p-3 shadow">
-        <img
-          width={400}
-          className="rounded shadow-sm img-fluid"
-          src={chef_picture}
-        />
-        <div className="my-4 my-md-0">
+      <div className="container d-lg-flex mx-auto align-items-center gap-3 my-5 border rounded p-3 shadow">
+        <div className="d-flex justify-content-center">
+          <img
+            width={400}
+            className="rounded shadow-sm img-fluid"
+            src={chef_picture}
+          />
+        </div>
+        <div className="my-4">
           <h4>Chef Name: {chef_name}</h4>
           <h5 className="my-2 lh-base ">Short Bio: {short_bio}</h5>
           <h5>Experience: {years_of_experience} Years</h5>
@@ -47,9 +49,11 @@ const Chef = () => {
       </div>
       <div>
         <h3 className="text-center pt-3">Available Recipes</h3>
-        <div className="row justify-content-center gap-5 my-5 pb-5">
+        <div className=" container mx-auto row justify-content-center gap-5 my-5 pb-5">
           {recipes.map((recipe, idx) => (
-            <div className="col-3 p-4 shadow-sm rounded border" key={idx}>
+            <div
+              className="col-lg-3 col-md-5 col-sm-12 p-4 shadow-sm rounded border"
+              key={idx}>
               <h5>Recipe: {recipe.recipe_name}</h5>
               <p>
                 <span className="fw-semibold">Ingredients:</span>

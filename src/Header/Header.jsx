@@ -8,10 +8,11 @@ const Header = () => {
         <h1>Savory Secrets</h1>
         <h3>Best Food for Your Test</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos,
-          molestiae? Voluptatum esse ducimus quae iure rem consequatur eaque
-          voluptatem veniam doloribus possimus dolore, neque sit quibusdam est
-          excepturi, ex doloremque.
+          “Tell me what you eat, and I will tell you who you are.” “So long as
+          you have food in your mouth you have solved all questions for the time
+          being.” “There is no sincere love than the love of food.” “If more of
+          us valued food and cheer and song above hoarded gold, it would be a
+          merrier world.”
         </p>
         <button className="btn btn-primary">Order Now</button>
       </div>

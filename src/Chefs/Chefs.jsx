@@ -13,8 +13,8 @@ const Chefs = ({chef}) => {
     years_of_experience,
   } = chef;
   return (
-    <Card className="p-2 shadow" style={{width: "18rem"}}>
-      <Card.Img variant="top" src={chef_picture} />
+    <Card className="p-2 shadow p-3">
+      <Card.Img className="rounded" variant="top" src={chef_picture} />
       <Card.Body>
         <Card.Title>{chef_name}</Card.Title>
         <p className="my-2">Experience: {years_of_experience} Years</p>
